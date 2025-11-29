@@ -1,3 +1,6 @@
+# version: v1.0.0.0 (Epoch Semver)
+# (MARKETING.BREAKING.FEATURE.PATCH)
+
 git-brclean() {
     # fetch and prune all remotes
     git fetch --all --prune
