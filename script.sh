@@ -20,4 +20,6 @@ git-brclean() {
     # filter for branch names that are not current or in arguments, pass to next
     # for each given branch, delete if merged
     git branch --merged | grep -Ev "$anti_match" | xargs -r git branch -d;
+    # btw, this line was taken from StackOverflow:
+    # https://stackoverflow.com/a/6127884
 }
