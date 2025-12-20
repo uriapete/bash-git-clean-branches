@@ -2,6 +2,20 @@
 # version: v1.0.0.0 (Epoch Semver)
 # (MARKETING.BREAKING.FEATURE.PATCH)
 
+# name of the directory (child directory of this) that holds all gp functions
+FNS_DIR="functions"
+
+# get pathnames of the above directory
+# from https://stackoverflow.com/a/59916
+FNS_DIR=$( cd -- "$( dirname -- "$0" )/$FNS_DIR" && pwd )
+
+echo "        loading gp- functions in $FNS_DIR";
+
+for FILE in "$FNS_DIR"/*.sh; do
+    echo "        loading $FILE"
+    . "$FILE"
+done
+
 git-brclean() {
     # fetch and prune all remotes
     git fetch --all --prune
