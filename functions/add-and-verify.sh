@@ -10,5 +10,9 @@ function gitp-add-verify {
     for ARG in "$@"; do
         ADD_COMM="$ADD_COMM $ARG"
     done
-    echo "$ADD_COMM"
+    
+    # execute the git add
+    eval "$ADD_COMM"
+
+    git status
 }
