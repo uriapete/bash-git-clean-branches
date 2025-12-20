@@ -26,3 +26,7 @@ git-brclean() {
     # btw, this line was taken from StackOverflow:
     # https://stackoverflow.com/a/6127884
 }
+
+gitp-prunebr(){
+    echo "I clean branches!"
+}
