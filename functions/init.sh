@@ -1,1 +1,1 @@
-echo "            loading gp-add-verify"
+echo "            loading gitp-add-verify"
