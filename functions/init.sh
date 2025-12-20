@@ -1,1 +1,1 @@
-echo "            loading gitp-add-verify"
+echo "            loading gitp-init"
