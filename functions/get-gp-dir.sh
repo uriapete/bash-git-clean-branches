@@ -1,6 +1,9 @@
 echo "            loading _gitp-getdir"
 
 _gitp-getdir() {
+    # name of gitplus folder
+    GP_PATH=".gitplus"
+
     # get current directory
     DIR="$(pwd)"
     # echo "$DIR";
