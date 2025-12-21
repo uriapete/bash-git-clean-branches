@@ -15,8 +15,23 @@ gitp-preserve-branch() {
         return
     fi;
 
-    # for each specified branch name, append to list of branches to preserve
+    # for each specified branch name, append to list of branches to preserve IF it does not exist yet
     for BR_NM in "$@"; do
-        echo "$BR_NM" >> "$DATA_PATH/preserve_branches"
+        # case statement taken from https://stackoverflow.com/a/4749368
+        # plus syntax taken from https://www.geeksforgeeks.org/linux-unix/bash-scripting-case-statement/
+        case $(grep -Fx "$BR_NM" "$BRLI" > /dev/null; echo $?) in
+            # if found (code 0), skip
+            0)
+                continue
+                ;;
+            # if not found (code 1), append
+            1)
+                echo "$BR_NM" >> "$DATA_PATH/preserve_branches"
+                ;;
+            # anything else, it is an error
+            *)
+                echo "Something has gone wrong!"
+                ;;
+        esac
     done
 }
