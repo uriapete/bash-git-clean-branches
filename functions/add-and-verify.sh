@@ -5,16 +5,8 @@ echo "            loading gitp-add-verify"
 # this function performs git add, diff --cached, status.
 # takes same arguments as git add.
 function gitp-add-verify {
-    # base command for git add
-    ADD_COMM="git add"
-
-    # append arguments to git add
-    for ARG in "$@"; do
-        ADD_COMM="$ADD_COMM $ARG"
-    done
-    
-    # execute the git add
-    eval "$ADD_COMM"
+    # perform the git add, append args
+    eval "git add $@"
 
     # show what's staged
     git diff --cached
