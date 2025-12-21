@@ -14,5 +14,9 @@ function gitp-add-verify {
     # execute the git add
     eval "$ADD_COMM"
 
+    # show what's staged
+    git diff --cached
+
+    # show the status of git
     git status
 }
