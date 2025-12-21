@@ -11,5 +11,8 @@ gitp-preserve-branch() {
         return
     fi;
 
-    echo "pb found"
+    # for each specified branch name, append to list of branches to preserve
+    for BR_NM in "$@"; do
+        echo "$BR_NM" >> $DATA_PATH
+    done
 }
