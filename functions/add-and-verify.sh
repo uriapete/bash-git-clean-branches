@@ -2,6 +2,8 @@
 
 echo "            loading gitp-add-verify"
 
+# this function performs git add, diff --cached, status.
+# takes same arguments as git add.
 function gitp-add-verify {
     # base command for git add
     ADD_COMM="git add"
