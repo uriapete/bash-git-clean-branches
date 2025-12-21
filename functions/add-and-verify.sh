@@ -14,3 +14,5 @@ function gitp-add-verify {
     # show the status of git
     git status
 }
+
+alias gitp-av="gitp-add-verify"
