@@ -10,5 +10,10 @@ gitp-allow-prune() {
         echo "Required GitPlus data not found! Please run gitp-init"
         return
     fi;
-    echo "ready to prune"
+    
+    # remove the line with the branch name from BRLI
+    for BRNM in "$@"; do
+        echo "Allowing $BRNM to be automatically pruned by gitp-prunebr"
+        sed -i "/$BRNM/d" "$BRLI";
+    done
 }
