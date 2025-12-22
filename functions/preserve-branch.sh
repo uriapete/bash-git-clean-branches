@@ -1,4 +1,6 @@
-echo "            loading gitp-presbr"
+if [ "$GITPV" = "1" ]; then
+    echo "            loading gitp-presbr"
+fi
 
 # adds the desired branches to .gitplus/preserve_branches
 # to prevent them from being automatically pruned

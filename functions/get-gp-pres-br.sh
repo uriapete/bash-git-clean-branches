@@ -1,4 +1,6 @@
-echo "            loading _gitp-getpresbr"
+if [ "$GITPV" = "1" ]; then
+    echo "            loading _gitp-getpresbr"
+fi
 
 _gitp-getpresbr(){
     # get the path of the gitplus folder

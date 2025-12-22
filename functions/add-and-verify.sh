@@ -1,6 +1,8 @@
 # shellcheck disable=SC2148
 
-echo "            loading gitp-add-verify"
+if [ "$GITPV" = "1" ]; then
+    echo "            loading gitp-add-verify"
+fi
 
 # this function performs git add, diff --cached, status.
 # takes same arguments as git add.

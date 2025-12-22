@@ -8,9 +8,13 @@ FNS_DIR="functions"
 # from https://stackoverflow.com/a/59916
 FNS_DIR=$( cd -- "$( dirname -- "$0" )/$FNS_DIR" && pwd )
 
-echo "        loading gitp- functions in $FNS_DIR";
+if [ "$GITPV" = "1" ]; then
+    echo "        loading gitp- functions in $FNS_DIR";
+fi
 
 for FILE in "$FNS_DIR"/*.sh; do
-    echo "        loading $FILE"
+    if [ "$GITPV" = "1" ]; then
+        echo "        loading $FILE"
+    fi
     . "$FILE"
 done

@@ -1,4 +1,6 @@
-echo "            loading gitp-prunebr"
+if [ "$GITPV" = "1" ]; then
+    echo "            loading gitp-prunebr"
+fi
 
 gitp-prunebr(){
     # fetch and prune all remotes

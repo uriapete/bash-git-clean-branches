@@ -1,4 +1,6 @@
-echo "            loading gitp-init"
+if [ "$GITPV" = "1" ]; then
+    echo "            loading gitp-init"
+fi
 
 gitp-init() {
     # what name should we use for the directory that will hold gitplus data?

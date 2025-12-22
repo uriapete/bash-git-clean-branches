@@ -1,4 +1,6 @@
-echo "            loading gitp-allow-prune"
+if [ "$GITPV" = "1" ]; then
+    echo "            loading gitp-allow-prune"
+fi
 
 # removes the specified branch from preserve_branches.
 gitp-allow-prune() {

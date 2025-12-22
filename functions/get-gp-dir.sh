@@ -1,4 +1,6 @@
-echo "            loading _gitp-getdir"
+if [ "$GITPV" = "1" ]; then
+    echo "            loading _gitp-getdir"
+fi
 
 _gitp-getdir() {
     # name of gitplus folder
