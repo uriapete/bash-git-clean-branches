@@ -6,7 +6,7 @@ echo "            loading gitp-add-verify"
 # takes same arguments as git add.
 function gitp-add-verify {
     # perform the git add, append args
-    eval "git add $@"
+    eval "git add $*"
 
     # show what's staged
     git diff --cached
