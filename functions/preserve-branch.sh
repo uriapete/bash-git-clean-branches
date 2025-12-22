@@ -14,6 +14,8 @@ gitp-preserve-branch() {
 
     # for each specified branch name, append to list of branches to preserve IF it does not exist yet
     for BR_NM in "$@"; do
+        echo "Preventing branch $BR_NM from being automatically pruned by gitp-prunebr"
+
         # case statement taken from https://stackoverflow.com/a/4749368
         # plus syntax taken from https://www.geeksforgeeks.org/linux-unix/bash-scripting-case-statement/
         case $(grep -Fx "$BR_NM" "$BRLI" > /dev/null; echo $?) in
