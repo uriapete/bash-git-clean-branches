@@ -3,14 +3,11 @@ echo "            loading gitp-presbr"
 # adds the desired branches to .gitplus/preserve_branches
 # to prevent them from being automatically pruned
 gitp-preserve-branch() {
-    # get the path of the gitplus folder
-    DATA_PATH="$(_gitp-getdir)"
-
     # get the path of the list of branches to preserve
-    BRLI="$DATA_PATH/preserve_branches"
+    BRLI="$(_gitp-getpresbr)"
 
     # check if the data file exists. if it does not, prompt and terminate
-    if [ "$DATA_PATH" = "NULL" ]; then
+    if [ "$BRLI" = "NULL" ]; then
         echo "Required GitPlus data not found! Please run gitp-init"
         return
     fi;
@@ -26,7 +23,7 @@ gitp-preserve-branch() {
                 ;;
             # if not found (code 1), append
             1)
-                echo "$BR_NM" >> "$DATA_PATH/preserve_branches"
+                echo "$BR_NM" >> "$BRLI"
                 ;;
             # anything else, it is an error
             *)
