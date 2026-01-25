@@ -12,7 +12,3 @@ Upon reloading your terminal session, you can now use all `gitp-` functions.
 - `gitp-allow-prune [...branches]` - Allows the specified branches to be deleted/pruned by `gitp-prunebr`.
 - `gitp-prunebr` - Fetches remotes and prunes tracking branches which track non-existant branches (`git fetch --all --prune`), then deletes all low branches that have already been merged into the current branch EXCEPT branch names that have been marked for preservation by `gitp-preserve-branch`.
   - It's recommended to add your default branch to your preserve list using `gitp-preserve-branch` and switch to it before doing this. Although, as long as your default branch has been marked to preserve and your current branch is up to date with the default branch, it should not matter what branch you are on when you run `gitp-prunebr`. Perhaps later I will add functions to set the default branch and `gitp-prunebr` will switch to the default branch automatically.
-
-For example:
-`git-brclean main dev 95-my-issue`
-This will clean all merged branches except for `main`, `dev`, and `95-my-issue`.
